@@ -1,0 +1,11 @@
+.hero {
+  min-height: calc(101vh - 80px);
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../assets/Home/baner.jpeg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
