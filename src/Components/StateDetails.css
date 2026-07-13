@@ -1,0 +1,198 @@
+.state-details-page {
+  min-height: 100vh;
+  padding: 70px 0 90px;
+  background-color: #f7f8fa;
+}
+
+
+/* ==============================
+   STATE HEADING
+================================ */
+
+.state-heading {
+  max-width: 1000px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.state-heading h1 {
+  font-size: 45px;
+  font-weight: 700;
+  color: #172033;
+  margin-bottom: 20px;
+}
+
+.state-heading h1 span {
+  color: #ff6600;
+}
+
+.state-heading p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #666;
+}
+
+
+/* ==============================
+   TOUR CARD
+================================ */
+
+.tour-card {
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+  transition: 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ==============================
+   IMAGE
+================================ */
+
+.tour-image {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.tour-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.tour-card:hover .tour-image img {
+  transform: scale(1.07);
+}
+
+
+/* ==============================
+   CONTENT
+================================ */
+
+.tour-content {
+  padding: 25px;
+}
+
+.tour-content h2 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #172033;
+
+  margin-bottom: 15px;
+}
+
+.place-history {
+  min-height: 130px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #555;
+}
+
+
+/* ==============================
+   VISIT TIME
+================================ */
+
+.visit-time {
+  margin-top: 20px;
+  padding-top: 15px;
+
+  border-top: 1px solid #ddd;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.visit-time span {
+  color: #ff6600;
+  font-weight: 600;
+}
+
+.visit-time strong {
+  color: #172033;
+  text-align: right;
+}
+
+
+/* ==============================
+   TABLET
+================================ */
+
+@media (max-width: 991px) {
+
+  .state-heading h1 {
+    font-size: 38px;
+  }
+
+  .tour-image {
+    height: 250px;
+  }
+
+}
+
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 576px) {
+
+  .state-details-page {
+    padding: 45px 0 60px;
+  }
+
+  .state-heading {
+    margin-bottom: 35px;
+  }
+
+  .state-heading h1 {
+    font-size: 30px;
+  }
+
+  .state-heading p {
+    font-size: 15px;
+  }
+
+  .tour-image {
+    height: 240px;
+  }
+
+  .tour-content {
+    padding: 20px;
+  }
+
+  .tour-content h2 {
+    font-size: 23px;
+  }
+
+  .place-history {
+    min-height: auto;
+  }
+
+  .visit-time {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .visit-time strong {
+    text-align: left;
+  }
+
+}

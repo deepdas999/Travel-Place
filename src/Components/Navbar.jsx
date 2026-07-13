@@ -1,16 +1,53 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const stateRoutes = {
+      "west bengal": "west-bengal",
+      odisha: "odisha",
+      rajasthan: "rajasthan",
+      delhi: "delhi",
+      "uttar pradesh": "uttar-pradesh",
+      "tamil nadu": "tamil-nadu",
+      kerala: "kerala",
+      goa: "goa",
+      "jammu and kashmir": "jammu-and-kashmir",
+      kashmir: "jammu-and-kashmir",
+      gujarat: "gujarat",
+      punjab: "punjab",
+      jharkhand: "jharkhand",
+    };
+
+    const searchValue = search.trim().toLowerCase();
+
+    const stateSlug = stateRoutes[searchValue];
+
+    if (stateSlug) {
+      navigate(`/${stateSlug}`);
+      setSearch("");
+    } else {
+      alert("State Not Found");
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-white shadow-sm py-3">
       <div className="container">
 
         <Link
-        className="navbar-brand fw-bold fs-3 text-warning text-uppercase"to="/">
-            Bharat Darshan
+          className="navbar-brand fw-bold fs-3 text-warning text-uppercase"
+          to="/"
+        >
+          Bharat Darshan
         </Link>
-        
+
         <button
           className="navbar-toggler"
           type="button"
@@ -41,11 +78,16 @@ function Navbar() {
               Contact
             </Link>
 
-            <form className="d-flex flex-column flex-lg-row gap-2 ms-lg-3 mt-3 mt-lg-0">
+            <form
+              className="d-flex flex-column flex-lg-row gap-2 ms-lg-3 mt-3 mt-lg-0"
+              onSubmit={handleSearch}
+            >
               <input
                 className="form-control"
                 type="search"
-                placeholder="Search places..."
+                placeholder="Search states..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
 
               <button
